@@ -15,12 +15,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Namaz ka Waqt',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: onGenerateRoute,
-      initialRoute: splashScreenRoute,
+      initialRoute: homeScreenRoute,
+
+      // initialRoute: splashScreenRoute,
     );
   }
 }
