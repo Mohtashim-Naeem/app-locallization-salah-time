@@ -732,7 +732,7 @@ class _namazTimeState extends State<namazTime> {
                             ),
                           ).tr(),
                           Text(
-                            'After 12 minutes!',
+                            'namazTime.maqrooh',
                             style: TextStyle(
                               fontSize: width * 0.04,
 
