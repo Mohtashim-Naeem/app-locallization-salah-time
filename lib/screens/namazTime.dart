@@ -1,6 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:one_clock/one_clock.dart';
+
+// import 'package:one_clock/one_clock.dart';
 
 class namazTime extends StatefulWidget {
   const namazTime({super.key});
@@ -48,6 +49,13 @@ class _namazTimeState extends State<namazTime> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 15, 15, 15),
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(
+                context,
+              );
+            },
+            icon: Icon(Icons.arrow_back_ios_new_rounded, size: width * 0.05)),
         elevation: 3,
         // bottomOpacity: 2,
 
@@ -55,7 +63,10 @@ class _namazTimeState extends State<namazTime> {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 39, 39, 39),
         // backgroundColor: Color.fromARGB(255, 153, 0, 0),
-        title: Text('Namaz Time'.toUpperCase()),
+        title: Text(
+          'namazTime.AppBar',
+          style: TextStyle(fontSize: width * 0.08),
+        ).tr(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -79,12 +90,12 @@ class _namazTimeState extends State<namazTime> {
             SizedBox(
               height: height * 0.02,
             ),
-            DigitalClock(
-                textScaleFactor: 1.8,
-                showSeconds: true,
-                isLive: true,
-                digitalClockTextColor: const Color.fromARGB(255, 154, 23, 23),
-                datetime: DateTime.now()),
+            // DigitalClock(
+            //     textScaleFactor: 1.8,
+            //     showSeconds: true,
+            //     isLive: true,
+            //     digitalClockTextColor: const Color.fromARGB(255, 154, 23, 23),
+            //     datetime: DateTime.now()),
             SizedBox(
               height: height * 0.05,
             ),
@@ -106,12 +117,12 @@ class _namazTimeState extends State<namazTime> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'AL-Fajar',
+                    'namazTime.AlFajar',
                     style: TextStyle(
                         fontSize: width * 0.06,
                         // fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  ),
+                  ).tr(),
                   Chip(
                     side: const BorderSide(
                       // width: 0.0,
@@ -142,14 +153,14 @@ class _namazTimeState extends State<namazTime> {
                           Text(
                             // Salah_Time['Al-Fajar'],
 
-                            'Starts At : ',
+                            'namazTime.start',
 
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             // Salah_Time['Al-Fajar'],
 
@@ -168,13 +179,13 @@ class _namazTimeState extends State<namazTime> {
                       Row(
                         children: [
                           Text(
-                            'Ends At : ',
+                            'namazTime.end',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             '${salahTime['Al-Dhuhr']}',
                             style: TextStyle(
@@ -192,7 +203,7 @@ class _namazTimeState extends State<namazTime> {
                     ],
                   ),
                   // trailing: Text(
-                  //   'Ends At : ${Salah_Time['Al-Dhuhr']}',
+                  //   'namazTime.end${Salah_Time['Al-Dhuhr']}',
                   //   style: TextStyle(
                   //     fontWeight: FontWeight.w700,
                   //     color: Color.fromARGB(255, 153, 0, 0),
@@ -222,12 +233,12 @@ class _namazTimeState extends State<namazTime> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'AL-Dhuhr',
+                    'namazTime.AlDhuhr',
                     style: TextStyle(
                         fontSize: width * 0.06,
                         // fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  ),
+                  ).tr(),
                   Chip(
                     side: const BorderSide(
                         // width: 0.0
@@ -254,13 +265,13 @@ class _namazTimeState extends State<namazTime> {
                           Text(
                             // Salah_Time['Al-Fajar'],
 
-                            'Starts At : ',
+                            'namazTime.start',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             // Salah_Time['Al-Fajar'],
 
@@ -279,13 +290,13 @@ class _namazTimeState extends State<namazTime> {
                       Row(
                         children: [
                           Text(
-                            'Ends At : ',
+                            'namazTime.end',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             '${salahTime['Al-Asr']}',
                             style: TextStyle(
@@ -325,12 +336,12 @@ class _namazTimeState extends State<namazTime> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'AL-Asr',
+                    'namazTime.AlAsr',
                     style: TextStyle(
                         fontSize: width * 0.06,
                         // fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  ),
+                  ).tr(),
                   Chip(
                     side: const BorderSide(
                         // width: 0.0
@@ -357,13 +368,13 @@ class _namazTimeState extends State<namazTime> {
                           Text(
                             // Salah_Time['Al-Fajar'],
 
-                            'Starts At : ',
+                            'namazTime.start',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             // Salah_Time['Al-Fajar'],
 
@@ -382,13 +393,13 @@ class _namazTimeState extends State<namazTime> {
                       Row(
                         children: [
                           Text(
-                            'Ends At : ',
+                            'namazTime.end',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             '${salahTime['Al-Maghrib']}',
                             style: TextStyle(
@@ -429,12 +440,12 @@ class _namazTimeState extends State<namazTime> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'AL-Maghrib',
+                    'namazTime.AlMaghrib',
                     style: TextStyle(
                         fontSize: width * 0.06,
                         // fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  ),
+                  ).tr(),
                   Chip(
                     side: const BorderSide(
                         // width: 0.0
@@ -461,13 +472,13 @@ class _namazTimeState extends State<namazTime> {
                           Text(
                             // Salah_Time['Al-Fajar'],
 
-                            'Starts At : ',
+                            'namazTime.start',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             // Salah_Time['Al-Fajar'],
 
@@ -486,13 +497,13 @@ class _namazTimeState extends State<namazTime> {
                       Row(
                         children: [
                           Text(
-                            'Ends At : ',
+                            'namazTime.end',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             '${salahTime['Al-Isha']}',
                             style: TextStyle(
@@ -532,12 +543,12 @@ class _namazTimeState extends State<namazTime> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'AL-Isha',
+                    'namazTime.AlIsha',
                     style: TextStyle(
                         fontSize: width * 0.06,
                         // fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  ),
+                  ).tr(),
                   Chip(
                     side: const BorderSide(
                         // width: 0.0
@@ -564,13 +575,13 @@ class _namazTimeState extends State<namazTime> {
                           Text(
                             // Salah_Time['Al-Fajar'],
 
-                            'Starts At : ',
+                            'namazTime.start',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             // Salah_Time['Al-Fajar'],
 
@@ -589,13 +600,13 @@ class _namazTimeState extends State<namazTime> {
                       Row(
                         children: [
                           Text(
-                            'Ends At : ',
+                            'namazTime.end',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             '${salahTime['Al-Fajar']}',
                             style: TextStyle(
@@ -637,12 +648,13 @@ class _namazTimeState extends State<namazTime> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Sunset',
+                    'namazTime.Sunset',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: width * 0.06,
-                        fontWeight: FontWeight.w500),
-                  ),
+                      color: Colors.white,
+                      fontSize: width * 0.06,
+                      // fontWeight: FontWeight.w500
+                    ),
+                  ).tr(),
                   const SizedBox(
                     width: 15,
                   ),
@@ -666,14 +678,14 @@ class _namazTimeState extends State<namazTime> {
                 ListTile(
                   // title: Text(
                   //   // Salah_Time['Al-Fajar'],
-                  //   'Starts At : ${Salah_Time['Sunset']}',
+                  //   'namazTime.start${Salah_Time['Sunset']}',
                   //   style: const TextStyle(
                   //     fontWeight: FontWeight.w700,
                   //     color: Color.fromARGB(255, 153, 0, 0),
                   //   ),
                   // ),
                   // trailing: Text(
-                  //   'Ends At : After 12 minutes!',
+                  //   'namazTime.endAfter 12 minutes!',
                   //   style: TextStyle(
                   //     fontWeight: FontWeight.w700,
                   //     color: Color.fromARGB(255, 153, 0, 0),
@@ -687,13 +699,13 @@ class _namazTimeState extends State<namazTime> {
                           Text(
                             // Salah_Time['Al-Fajar'],
 
-                            'Starts At : ',
+                            'namazTime.start',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             // Salah_Time['Al-Fajar'],
 
@@ -712,13 +724,13 @@ class _namazTimeState extends State<namazTime> {
                       Row(
                         children: [
                           Text(
-                            'Ends At : ',
+                            'namazTime.end',
                             style: TextStyle(
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
-                          ),
+                          ).tr(),
                           Text(
                             'After 12 minutes!',
                             style: TextStyle(
@@ -730,7 +742,7 @@ class _namazTimeState extends State<namazTime> {
                               fontWeight: FontWeight.w700,
                               color: const Color.fromARGB(255, 154, 23, 23),
                             ),
-                          ),
+                          ).tr(),
                         ],
                       )
                     ],

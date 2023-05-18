@@ -1,0 +1,19 @@
+{   "HOME":{
+       "AppBar": "HOME SCREEN",
+       "Box1": "Namaz Time",
+       "Box2": "Qiblah Direction"},
+
+    "namazTime":{
+        "AppBar": "NAMAZ TIME",
+        "AlFajar":"Al-Fajar",
+        "AlDhuhr":"Al-Dhuhr",
+        "AlAsr":"Al-Asr",
+        "AlMaghrib":"Al-Maghrib",
+        "AlIsha":"Al-Isha",
+        "Sunset":"Sunset",
+    "start":"Starts At: ",
+    "end":"Ends At: ",
+    "maqrooh":"After 12 minutes!"
+
+}
+}

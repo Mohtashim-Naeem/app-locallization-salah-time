@@ -1,11 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:namaz_app/utils/service_locator.dart';
 
 import 'utils/app_routes.dart';
 
-void main() {
+void main() async {
   setupLocator();
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(EasyLocalization(
+      path: 'assets/translations',
+      supportedLocales: const [Locale('en', 'US'), Locale('ur')],
+      fallbackLocale: const Locale('en', 'US'),
+      child: const MyApp()));
+  const MyApp();
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +24,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       title: 'Namaz ka Waqt',
       theme: ThemeData(

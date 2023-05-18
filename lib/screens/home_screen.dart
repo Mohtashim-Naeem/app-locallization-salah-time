@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:namaz_app/screens/namazTime.dart';
 
@@ -26,7 +27,46 @@ class _HomeScreenState extends State<HomeScreen> {
 
       appBar: AppBar(
         elevation: 3,
+
         // bottomOpacity: 2,
+// =============================
+
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: const Text('Choose Language'),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          title: const Text('English').tr(),
+                          onTap: () {
+                            context.setLocale(const Locale('en', 'US'));
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        ListTile(
+                          title: const Text('Urdu').tr(),
+                          onTap: () {
+                            context.setLocale(const Locale('ur'));
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+        ],
+
+// ======================
 
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -34,8 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
         // backgroundColor: Color.fromARGB(255, 154, 23, 23),
 
         title: Text(
-          'Home Screen'.toUpperCase(),
-          style: TextStyle(fontSize: height * 0.03),
+          'HOME.AppBar'.tr(),
+          style: TextStyle(fontSize: width * 0.06),
         ),
       ),
       body: Center(
@@ -75,10 +115,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         Flexible(
                           child: Text(
                             textAlign: TextAlign.center,
-                            'Namaz Time',
+                            'HOME.Box1',
                             style: TextStyle(
                                 fontSize: width * 0.10, color: Colors.white),
-                          ),
+                          ).tr(),
                         ),
                         Flexible(
                           child: Image.asset(
@@ -121,10 +161,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             // softWrap: true,
                             textAlign: TextAlign.center,
 
-                            'Qibla Direction',
+                            'HOME.Box2',
                             style: TextStyle(
                                 fontSize: width * 0.10, color: Colors.white),
-                          ),
+                          ).tr(),
                         ),
                         Flexible(
                           child: Image.asset(
