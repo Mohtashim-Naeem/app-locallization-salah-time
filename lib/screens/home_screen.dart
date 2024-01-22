@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Flexible(
                           child: Image.asset(
-                            'images/salah.png',
+                            'assets/images/salah.png',
                             height: height * 0.20,
                           ),
                         ),
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Flexible(
                           child: Image.asset(
-                            'images/qibla.png',
+                            'assets/images/qibla.png',
                             height: height * 0.20,
                           ),
                         ),
